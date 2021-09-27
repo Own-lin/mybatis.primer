@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--.xml配置文件必须与其对应的接口在同一个包内-->
+<mapper namespace="com.lynn.mapper.UserMapper">
+
+<!--    自定义一个id为selectUser的sql标签-->
+    <sql id="selectUser">
+        SELECT * FROM imooc_user
+    </sql>
+    <sql id="selectUserShortcutMap">
+        SELECT username, age FROM imooc_user
+    </sql>
+
+
+    <!--通过xml方式实现-->
+    <select id="selectUserAgeById" resultType="java.lang.Integer">
+        SELECT age FROM imooc_user WHERE id = #{id}
+    </select>
+
+    <resultMap id="userMap" type="com.lynn.model.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="age" column="age"/>
+        <result property="score" column="score"/>
+    </resultMap>
+    <select id="selectUserByAgeAndScore" parameterType="com.lynn.model.User"
+            resultMap="userMap">
+        <include refid="selectUser"/>
+        WHERE age = #{age} AND score = #{score}
+    </select>
+    
+    <resultMap id="userShortcutMap" type="com.lynn.model.UserShortCut">
+        <result property="username" column="username"/>
+        <result property="age" column="age"/>
+    </resultMap>
+    <select id="selectUserShortcutById" resultMap="userShortcutMap">
+        <include refid="selectUserShortcutMap"/>
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.lynn.model.User">
+        INSERT INTO imooc_user(username, age, score) VALUES (#{username}, #{age}, #{score})
+    </insert>
+
+    <update id="updateUserAgeById">
+        UPDATE imooc_user SET age = #{age} WHERE id = #{id}
+    </update>
+</mapper>
