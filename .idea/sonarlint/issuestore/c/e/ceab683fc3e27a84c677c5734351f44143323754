@@ -1,0 +1,18 @@
+
+‰
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(±Üƒÿÿÿÿÿ
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(Ê Ùáøÿÿÿÿ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(ÊÊ¸³
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(Ø¼¢ƒ
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(­ÿÏÈ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(Şàñ—şÿÿÿÿ
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(ÈÙ¾Œøÿÿÿÿ
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(Ûã®ƒüÿÿÿÿ
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(àÆ¯†úÿÿÿÿ
+N	java:S106N"9Replace this use of System.out or System.err by a logger.(£º†
+N	java:S106\"9Replace this use of System.out or System.err by a logger.(œ–¼Á
+S	java:S106a"9Replace this use of System.out or System.err by a logger.(½Í³¬şÿÿÿÿ
+A
+java:S1128"+Remove this unused import 'java.sql.Array'.(Õø‹ù
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

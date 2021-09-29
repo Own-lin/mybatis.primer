@@ -83,6 +83,20 @@ public class StartWithMapper
         pedro.setUsername("pedro");
         pedro.setAge(22);
 
+        /*条件标签if*/
+        UserMapper userMapper1 = session.getMapper(UserMapper.class);
+        User condition1 = new User();
+        condition1.setUsername("pedro");
+        condition1.setScore(200);
+        User pedro1 = userMapper1.selectUserByNameDynamic(condition1);
+        System.out.println(pedro1);
+
+        /*choose标签*/
+        UserMapper userMapper3 = session.getMapper(UserMapper.class);
+        User pedro2 = userMapper3.selectUserByIdOrName(null, null);
+        System.out.println(pedro2);
+
+
         /*执行insert、update标签时一定需要通过commit方法提交会话*/
         session.commit();
 

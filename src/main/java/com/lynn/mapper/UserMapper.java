@@ -92,4 +92,24 @@ public interface UserMapper
  * @return int
  */
     int checkTheCuntByName(@Param("username") String username);
+
+/**
+ * TODO 通过if标签动态 “书写” SQL
+ * @author Lynn
+ * @date 2021/9/29 21:14
+ * @param user User类的形参
+ * @return com.lynn.model.User
+ */
+    User selectUserByNameDynamic(User user);
+
+/**
+ * TODO 使用 choose + when 标签进行多重逻辑判断
+ * @author Lynn
+ * @date 2021/9/29 23:56
+ * @param id
+ * @param username
+ * @return com.lynn.model.User
+ */
+    User selectUserByIdOrName(@Param("id")Integer id, @Param("username")String username);
+
 }

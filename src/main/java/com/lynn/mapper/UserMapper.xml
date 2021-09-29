@@ -55,4 +55,32 @@
     <select id="checkTheCuntByName" parameterType="string" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM imooc_user WHERE username = #{username}
     </select>
+
+    <select id="selectUserByNameDynamic" parameterType="com.lynn.model.User"
+            resultType="com.lynn.model.User">
+        SELECT * FROM imooc_user
+        WHERE username = #{username}
+        <if test="age != null">
+            AND age = #{age}
+        </if>
+        <if test="score != null">
+            AND score = #{score}
+        </if>
+    </select>
+    
+    <select id="selectUserByIdOrName"   resultType="com.lynn.model.User">
+        SELECT * FROM imooc_user
+        WHERE 
+        <choose>
+            <when test="id != null">
+                id = #{id}
+            </when>
+            <when test="username != null">
+                username = #{username}
+            </when>
+            <otherwise>
+                1 = 0
+            </otherwise>
+        </choose>
+    </select>
 </mapper>
