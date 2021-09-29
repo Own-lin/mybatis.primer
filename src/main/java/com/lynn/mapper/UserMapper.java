@@ -74,4 +74,22 @@ public interface UserMapper
  * @return int
  */
     int updateUserAgeById(@Param("age") Integer age, @Param("id") Integer id);
+
+/**
+ * TODO 使用delete标签依据用户名删除用户数据
+ * @author Lynn
+ * @date 2021/9/28 22:16
+ * @param username
+ * @return java.lang.String
+ */
+    int deleteUserByName(@Param("username") String username);
+
+/**
+ * TODO 通过用户名字统计用户在表中的数据条数
+ * @author Lynn
+ * @date 2021/9/28 22:41
+ * @param username
+ * @return int
+ */
+    int checkTheCuntByName(@Param("username") String username);
 }

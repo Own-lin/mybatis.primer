@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -62,6 +63,25 @@ public class StartWithMapper
         int rows1 = userMapper.updateUserAgeById(180, 1);
         System.out.println(rows1);
 
+        /*使用delete标签循环删除多余的数据*/
+        String delName = "insert test";
+        Integer checkNum = userMapper.checkTheCuntByName(delName);
+        if (checkNum == null)
+        {
+            System.out.println("User message is empty!!!");
+        }else if(checkNum == 1)
+        {
+            System.out.println("User only have one message!!!");
+        }else
+        {
+            int delUserByName = userMapper.deleteUserByName(delName);
+            System.out.println(delUserByName);
+        }
+
+        /*OGNL表达式*/
+        User pedro = new User();
+        pedro.setUsername("pedro");
+        pedro.setAge(22);
 
         /*执行insert、update标签时一定需要通过commit方法提交会话*/
         session.commit();

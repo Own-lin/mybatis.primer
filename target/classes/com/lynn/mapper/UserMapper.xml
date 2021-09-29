@@ -48,4 +48,11 @@
     <update id="updateUserAgeById">
         UPDATE imooc_user SET age = #{age} WHERE id = #{id}
     </update>
+    
+    <delete id="deleteUserByName">
+        DELETE FROM imooc_user WHERE username = #{username}
+    </delete>
+    <select id="checkTheCuntByName" parameterType="string" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM imooc_user WHERE username = #{username}
+    </select>
 </mapper>
