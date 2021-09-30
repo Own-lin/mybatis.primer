@@ -1,12 +1,10 @@
-package com.lynn.mapper;
+package com.lynn.Dao.mapper;
 
 import com.lynn.model.User;
 import com.lynn.model.UserShortCut;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 /**
  * explain: MyBatis各类标签的示例

@@ -1,6 +1,6 @@
 package com.lynn.pattern;
 
-import com.lynn.mapper.UserMapper;
+import com.lynn.Dao.mapper.UserMapper;
 import com.lynn.model.User;
 import com.lynn.model.UserShortCut;
 import org.apache.ibatis.io.Resources;
@@ -10,9 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Array;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * explain:
@@ -25,6 +23,7 @@ public class StartWithMapper
 {
     public static void main(String[] args) throws IOException, SQLException
     {
+        //赋值MyBatis全局文件
         String  resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);

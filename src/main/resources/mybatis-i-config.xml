@@ -15,9 +15,7 @@
         </environment>
     </environments>
 
-    <!--Mapper对应的配置-->
     <mappers>
-        <mapper  class="com.lynn.Dao.mapper.UserMapper"/>
         <mapper class="com.lynn.Dao.mapper.MyUserMapper"/>
     </mappers>
 </configuration>

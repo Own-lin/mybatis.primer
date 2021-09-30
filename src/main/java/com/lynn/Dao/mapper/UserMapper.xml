@@ -2,8 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!--.xml配置文件必须与其对应的接口在同一个包内-->
-<mapper namespace="com.lynn.mapper.UserMapper">
+<mapper namespace="com.lynn.Dao.mapper.UserMapper">
 
 <!--    自定义一个id为selectUser的sql标签-->
     <sql id="selectUser">
